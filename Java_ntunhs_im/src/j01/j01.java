@@ -6,9 +6,9 @@ public class j01 {
 	static final double interest=0.05; 
     public static void main(String[] args) {
     	Scanner s=new Scanner(System.in);
-    	System.out.println("輸入本金:");
+   	System.out.println("input pv:");
     	pv=s.nextInt();
-    	System.out.println("輸入週期:");
+    	System.out.println("input interval:");
     	interval=s.nextInt();
 
     	fv=(int) (pv*Math.pow((1+interest), interval));
