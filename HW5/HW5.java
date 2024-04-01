@@ -55,42 +55,60 @@ class StoreValueCard{
 	}
 
 	void addValue(int value){
-		if(value<0) {
-			System.out.println("金額不能為負");	
-		}
-		else {
-			if(value>1000){
-				bonus+=value/1000;
+		if(scanner.hasNextInt()){
+			if(value<0) {
+				System.out.println("金額不能為負");	
 			}
-			this.balance=this.balance+value;
-			System.out.println(cardID+','+balance+','+bonus);
+			else {
+				if(value>1000){
+					bonus+=value/1000;
+				}
+				this.balance=this.balance+value;
+				System.out.println(cardID+','+balance+','+bonus);
+			}
 		}
+		else{
+			System.out.println("請輸入整數");
+		}
+		
 	}
 
 	void charge(int value){
-		if(value<0) {
-			System.out.println("金額不能為負");
-		}
-		else if(this.balance<value) {
-			System.out.println("餘額不足");
+		if(scanner.hasNextInt()){
+			if(value<0) {
+				System.out.println("金額不能為負");
+			}
+			else if(this.balance<value) {
+				System.out.println("餘額不足");
+			}
+			else{
+				this.balance=this.balance-value;
+				System.out.println(cardID+','+balance+','+bonus);
+			}
 		}
 		else{
-			this.balance=this.balance-value;
-			System.out.println(cardID+','+balance+','+bonus);
+			System.out.println("請輸入整數");
 		}
+		
 	}
 
 	void exchangeBonus(int b) {
-		if(b<0) {
-			System.out.println("不能為負");
+		if(scanner.hasNextInt()){
+			if(b<0) {
+				System.out.println("不能為負");
+			}
+			else if(bonus<b) {
+				System.out.println("紅利不足");
+			}
+			else {
+				bonus=bonus-b;
+				System.out.println(cardID+','+balance+','+bonus);
+			}
 		}
-		else if(bonus<b) {
-			System.out.println("紅利不足");
+		else{
+			System.out.println("請輸入整數");
 		}
-		else {
-			bonus=bonus-b;
-			System.out.println(cardID+','+balance+','+bonus);
-		}
+		
 	}
     
 	void printDetails() {
