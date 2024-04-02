@@ -22,7 +22,7 @@ public class HW6{
             }
             catch(Exception e){
                     System.out.println("請輸入整數");
-                    s.nextLine();//import!
+                    s.nextLine();//import!清除buffer
                     continue;
             }
             gameEnded=tictactoe.checkWinner(board, currentPlayer);
