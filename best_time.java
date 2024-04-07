@@ -1,15 +1,16 @@
-public class best_time {
+
+public class Solution{
     public int maxProfit(int[] prices) {
-        int min=prices[0],p = 0,c;
+        int min=prices[0],profit= 0,currect;
         for(int a=0;a<prices.length;a++) {
         if(prices[a]<min) {
             min=prices[a];
         }
-        c=prices[a]-min;
-        if(c>p) {
-            p=c;
+        currect=prices[a]-min;
+        if(currect>profit) {
+            profit=currect;
         }
         }
-        return p;
+        return profit;
     }
 }
