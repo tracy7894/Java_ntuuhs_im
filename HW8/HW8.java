@@ -114,7 +114,7 @@ abstract class chara{
     }
     public void takeDamage(int damage){
         //int reduce=Math.max(damage, 0);
-        health-=damage;
+        health=Math.max(0,health-damage);
         System.out.println(name+"受到傷害:"+damage+"剩餘hp:"+health);
     }
 }
@@ -142,7 +142,7 @@ class Warrior extends chara{
         
         damage-=def;
         if(damage>0){
-            health=health-damage;
+            health=Math.max(0,health-damage);
 
             System.out.println(name+"受到傷害:"+damage+"剩餘hp:"+health);
         }
